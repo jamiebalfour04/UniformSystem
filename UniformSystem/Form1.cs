@@ -6,5 +6,10 @@ namespace UniformSystem
         {
             InitializeComponent();
         }
+
+        private void btnPick_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
