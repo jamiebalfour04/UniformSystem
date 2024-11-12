@@ -1,6 +1,6 @@
 ﻿namespace UniformSystem
 {
-    partial class Form1
+    partial class UniformPicker
     {
         /// <summary>
         ///  Required designer variable.

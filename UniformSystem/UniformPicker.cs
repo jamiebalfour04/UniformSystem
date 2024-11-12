@@ -1,8 +1,8 @@
 namespace UniformSystem
 {
-    public partial class Form1 : Form
+    public partial class UniformPicker : Form
     {
-        public Form1()
+        public UniformPicker()
         {
             InitializeComponent();
         }
