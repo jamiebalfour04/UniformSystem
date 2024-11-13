@@ -103,7 +103,7 @@
             label1.TabIndex = 3;
             label1.Text = "Pick your registration/homeroom class from the list below";
             // 
-            // Form1
+            // UniformPicker
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -112,7 +112,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Form1";
+            Name = "UniformPicker";
             Text = "Uniform Recorder";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
