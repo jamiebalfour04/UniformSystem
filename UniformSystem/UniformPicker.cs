@@ -1,11 +1,17 @@
+using global::System;
+using global::System.Collections.Generic;
+using global::System.Drawing;
+using global::System.IO;
+using global::System.Linq;
+using global::System.Threading;
+using global::System.Windows.Forms;
+
 namespace UniformSystem
 {
     public partial class UniformPicker : Form
     {
 
-        private HashSet<String> registrationClasses = new HashSet<String>();
-        public static List<String> allPupils = new List<String>();
-
+      
         public UniformPicker()
         {
             InitializeComponent();
@@ -14,25 +20,64 @@ namespace UniformSystem
 
             var file = new System.IO.StreamReader(fileStream, System.Text.Encoding.UTF8);
 
-            String line = "";
-            while((line == file.ReadLine()) != false)
+            string fileStr = file.ReadToEnd();
+
+            foreach (string line in fileStr.Split())
             {
-                line = line.Substring(0, line.Length - 1).Trim();
-                string[] columns = line.Split(",");
+                if (line != "")
+                {
+                    String linex = line.Substring(0, line.Length - 1).Trim();
+                    string[] columns = linex.Split(',');
 
-                string regiClass = columns[2];
+                    string regiClass = columns[2];
 
-                registrationClasses.Add(regiClass);
-                allPupils.Add(line);
+                    if (Program.registrationClasses.ContainsKey(regiClass) == false)
+                    {
+                        Program.registrationClasses.Add(regiClass, new List<string>());
+                    }
+
+                    Program.registrationClasses[regiClass].Add(linex);
+                }
+
             }
 
+            List<string> keys = new List<string>();
 
+            foreach(string k in Program.registrationClasses.Keys)
+            {
+                keys.Add(k);
+                Program.registrationClasses[k].Sort();
+            }
+
+            keys.Sort();
+
+            foreach (string k in keys)
+            {
+                comboBox1.Items.Add(k);
+            }
+
+            if (comboBox1.Items.Count > 0)
+            {
+                comboBox1.SelectedIndex = 0;
+            }
         }
 
         private void btnPick_Click(object sender, EventArgs e)
         {
             ClassView c = new ClassView(comboBox1.Text);
             c.Visible = true;
+            this.Visible = false;
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginWindow l = new LoginWindow();
+            l.Visible = true;
+        }
+
+        private void UniformPicker_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

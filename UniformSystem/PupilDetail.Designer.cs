@@ -1,4 +1,12 @@
-﻿namespace UniformSystem
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Windows.Forms;
+
+namespace UniformSystem
 {
     partial class PupilDetail
     {
@@ -28,76 +36,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tableLayoutPanel1 = new TableLayoutPanel();
-            btnNoUniform = new Button();
-            btnNoTie = new Button();
-            nameLabel = new Label();
-            tableLayoutPanel1.SuspendLayout();
-            SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnNoUniform = new System.Windows.Forms.Button();
+            this.btnNoTie = new System.Windows.Forms.Button();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 134F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 134F));
-            tableLayoutPanel1.Controls.Add(btnNoUniform, 2, 0);
-            tableLayoutPanel1.Controls.Add(btnNoTie, 1, 0);
-            tableLayoutPanel1.Controls.Add(nameLabel, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(616, 47);
-            tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel1.Controls.Add(this.btnNoUniform, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnNoTie, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.nameLabel, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(616, 38);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnNoUniform
             // 
-            btnNoUniform.BackColor = Color.Transparent;
-            btnNoUniform.Dock = DockStyle.Fill;
-            btnNoUniform.FlatStyle = FlatStyle.Flat;
-            btnNoUniform.Location = new Point(485, 3);
-            btnNoUniform.Name = "btnNoUniform";
-            btnNoUniform.Size = new Size(128, 41);
-            btnNoUniform.TabIndex = 2;
-            btnNoUniform.Text = "No uniform";
-            btnNoUniform.UseVisualStyleBackColor = false;
-            btnNoUniform.Click += btnNoUniform_Click;
+            this.btnNoUniform.BackColor = System.Drawing.Color.Transparent;
+            this.btnNoUniform.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNoUniform.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNoUniform.Location = new System.Drawing.Point(485, 2);
+            this.btnNoUniform.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNoUniform.Name = "btnNoUniform";
+            this.btnNoUniform.Size = new System.Drawing.Size(128, 34);
+            this.btnNoUniform.TabIndex = 2;
+            this.btnNoUniform.Text = "No uniform";
+            this.btnNoUniform.UseVisualStyleBackColor = false;
+            this.btnNoUniform.Click += new System.EventHandler(this.btnNoUniform_Click);
             // 
             // btnNoTie
             // 
-            btnNoTie.BackColor = Color.Transparent;
-            btnNoTie.Dock = DockStyle.Fill;
-            btnNoTie.FlatStyle = FlatStyle.Flat;
-            btnNoTie.Location = new Point(351, 3);
-            btnNoTie.Name = "btnNoTie";
-            btnNoTie.Size = new Size(128, 41);
-            btnNoTie.TabIndex = 0;
-            btnNoTie.Text = "No tie";
-            btnNoTie.UseVisualStyleBackColor = false;
-            btnNoTie.Click += btnNoTie_Click;
+            this.btnNoTie.BackColor = System.Drawing.Color.Transparent;
+            this.btnNoTie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNoTie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNoTie.Location = new System.Drawing.Point(351, 2);
+            this.btnNoTie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNoTie.Name = "btnNoTie";
+            this.btnNoTie.Size = new System.Drawing.Size(128, 34);
+            this.btnNoTie.TabIndex = 0;
+            this.btnNoTie.Text = "No tie";
+            this.btnNoTie.UseVisualStyleBackColor = false;
+            this.btnNoTie.Click += new System.EventHandler(this.btnNoTie_Click);
             // 
             // nameLabel
             // 
-            nameLabel.Anchor = AnchorStyles.None;
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new Point(149, 13);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(50, 20);
-            nameLabel.TabIndex = 1;
-            nameLabel.Text = "label1";
+            this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(152, 11);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(44, 16);
+            this.nameLabel.TabIndex = 1;
+            this.nameLabel.Text = "label1";
             // 
             // PupilDetail
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(tableLayoutPanel1);
-            Name = "PupilDetail";
-            Size = new Size(616, 47);
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "PupilDetail";
+            this.Size = new System.Drawing.Size(616, 38);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

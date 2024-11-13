@@ -1,35 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
+
 
 namespace UniformSystem
 {
     public partial class ClassView : Form
     {
 
-        private List<string> pupils = new List<string>();
         private string registrationClass = "";
 
         public ClassView(string registrationClass)
         {
             InitializeComponent();
-            pupils.Add("Kameron Kent Holmes");
-            pupils.Add("Ava Morgan");
             this.registrationClass = registrationClass;
         }
 
         private void ClassView_Load(object sender, EventArgs e)
         {
             int i = 0;
-            foreach (string item in pupils)
+            foreach (string item in Program.registrationClasses[registrationClass])
             {
-                PupilDetail p = new PupilDetail(item);
+                string[] details = item.Split(',');
+                PupilDetail p = new PupilDetail(details[0] + " " + details[1], registrationClass);
                 this.panel1.Controls.Add(p);
                 p.Location = new Point(0, i * 50);
                 p.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -40,6 +37,8 @@ namespace UniformSystem
 
         private void btnComplete_Click(object sender, EventArgs e)
         {
+
+
             string csvOutput = "";
             foreach(Control c in panel1.Controls)
             {
@@ -51,7 +50,13 @@ namespace UniformSystem
                 
             }
 
-            MessageBox.Show(csvOutput);
+            Directory.CreateDirectory("ProgramOutput/" + Program.todayYear + "/" + Program.todayMonth + "/" + Program.todayDay + "/");
+
+            File.WriteAllText("ProgramOutput/" + Program.todayYear + "/" + Program.todayMonth + "/" + Program.todayDay + "/" + registrationClass + ".csv", csvOutput);
+
+            MessageBox.Show("Data saved.");
+
+            this.Close();
         }
     }
 }

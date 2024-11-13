@@ -5,32 +5,22 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UniformSystem
 {
     public partial class PupilDetail : UserControl
     {
-        public PupilDetail(String name)
+        public PupilDetail(string name, string registrationClass)
         {
             InitializeComponent();
             this.nameLabel.Text = name;
+            this.registrationClass = registrationClass;
         }
 
         private bool noTie = false;
         private bool noUniform = false;
-
-
-        public void setName(string n)
-        {
-            this.nameLabel.Text = n;
-        }
-
-        public string getName()
-        {
-            return this.nameLabel.Text;
-        }
+        private string registrationClass;
 
         private void btnNoTie_Click(object sender, EventArgs e)
         {
@@ -66,7 +56,7 @@ namespace UniformSystem
                 uniformString = "No";
             }
 
-            return this.nameLabel.Text + ", " + tieString + ", " + uniformString;
+            return this.nameLabel.Text + ", " + tieString + ", " + uniformString + "," + registrationClass;
         }
 
         private void btnNoUniform_Click(object sender, EventArgs e)
@@ -82,5 +72,6 @@ namespace UniformSystem
                 btnNoUniform.BackColor = Color.Transparent;
             }
         }
+
     }
 }

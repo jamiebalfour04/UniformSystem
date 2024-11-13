@@ -1,17 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Windows.Forms;
+
 namespace UniformSystem
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new UniformPicker());
         }
+
+        public static Dictionary<string, List<string>> registrationClasses = new Dictionary<string, List<string>>();
+        public static string todayDay = DateTime.Now.ToString("dd");
+        public static string todayMonth = DateTime.Now.ToString("MM");
+        public static string todayYear = DateTime.Now.ToString("yyyy");
+        public static string today = DateTime.Now.ToString("yyyy-MM-dd");
     }
 }
