@@ -33,8 +33,16 @@ namespace UniformSystem
                         output += File.ReadAllText(file);
                     }
 
-                    File.WriteAllText("ProgramOutput/" + Program.today + ".csv", output);
-                    Process.Start("explorer.exe", new FileInfo("ProgramOutput/").FullName);
+                    try
+                    {
+                        File.WriteAllText("ProgramOutput/" + Program.today + ".csv", output);
+                        Process.Start("explorer.exe", new FileInfo("ProgramOutput/").FullName);
+                        Application.Exit();
+                    } catch(System.IO.IOException xe)
+                    {
+                        MessageBox.Show("The file might be open at the moment. Make sure you close it before trying this again.");
+                    }
+                    
                 }
                 else
                 {
