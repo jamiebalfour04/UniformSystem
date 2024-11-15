@@ -33,10 +33,10 @@ namespace UniformSystem
 
                     if (Program.registrationClasses.ContainsKey(regiClass) == false)
                     {
-                        Program.registrationClasses.Add(regiClass, new List<string>());
+                        Program.registrationClasses.Add(regiClass, new List<Pupil>());
                     }
 
-                    Program.registrationClasses[regiClass].Add(linex);
+                    Program.registrationClasses[regiClass].Add(new Pupil(columns[0], columns[1], columns[2]));
                 }
 
             }
@@ -78,6 +78,11 @@ namespace UniformSystem
         private void UniformPicker_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void UniformPicker_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

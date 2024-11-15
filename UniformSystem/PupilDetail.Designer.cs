@@ -58,7 +58,7 @@ namespace UniformSystem
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(616, 38);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(614, 38);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnNoUniform
@@ -66,7 +66,7 @@ namespace UniformSystem
             this.btnNoUniform.BackColor = System.Drawing.Color.Transparent;
             this.btnNoUniform.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNoUniform.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNoUniform.Location = new System.Drawing.Point(485, 2);
+            this.btnNoUniform.Location = new System.Drawing.Point(483, 2);
             this.btnNoUniform.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNoUniform.Name = "btnNoUniform";
             this.btnNoUniform.Size = new System.Drawing.Size(128, 34);
@@ -80,7 +80,7 @@ namespace UniformSystem
             this.btnNoTie.BackColor = System.Drawing.Color.Transparent;
             this.btnNoTie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNoTie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNoTie.Location = new System.Drawing.Point(351, 2);
+            this.btnNoTie.Location = new System.Drawing.Point(349, 2);
             this.btnNoTie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNoTie.Name = "btnNoTie";
             this.btnNoTie.Size = new System.Drawing.Size(128, 34);
@@ -93,7 +93,7 @@ namespace UniformSystem
             // 
             this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(152, 11);
+            this.nameLabel.Location = new System.Drawing.Point(151, 11);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(44, 16);
             this.nameLabel.TabIndex = 1;
@@ -103,10 +103,12 @@ namespace UniformSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(0, 40);
             this.Name = "PupilDetail";
-            this.Size = new System.Drawing.Size(616, 38);
+            this.Size = new System.Drawing.Size(614, 38);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

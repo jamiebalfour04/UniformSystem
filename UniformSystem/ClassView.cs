@@ -23,14 +23,19 @@ namespace UniformSystem
         private void ClassView_Load(object sender, EventArgs e)
         {
             int i = 0;
-            foreach (string item in Program.registrationClasses[registrationClass])
+            Program.registrationClasses[registrationClass].Sort();
+            foreach (Pupil pup in Program.registrationClasses[registrationClass])
             {
-                string[] details = item.Split(',');
-                PupilDetail p = new PupilDetail(details[0] + " " + details[1], registrationClass);
-                this.panel1.Controls.Add(p);
-                p.Location = new Point(0, i * 50);
-                p.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-                p.Width = panel1.Width;
+                PupilDetail p = new PupilDetail(pup.getForename() + " " + pup.getSurname(), registrationClass);
+                this.flowLayoutPanel1.Controls.Add(p);
+                //p.Location = new Point(0, i * 50);
+                //p.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+                //p.Width = panel1.Width;
+                //p.Height = 40;
+                if(i % 2 == 0)
+                {
+                    p.BackColor = Color.LightGray; 
+                }
                 i++;
             }
         }
@@ -40,7 +45,7 @@ namespace UniformSystem
 
 
             string csvOutput = "";
-            foreach(Control c in panel1.Controls)
+            foreach(Control c in flowLayoutPanel1.Controls)
             {
                 PupilDetail p = (PupilDetail) c;
                 if (p.needsRecorded())
@@ -57,6 +62,20 @@ namespace UniformSystem
             MessageBox.Show("Data saved.");
 
             this.Close();
+            Application.Exit();
+        }
+
+        private void ClassView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ClassView_Resize(object sender, EventArgs e)
+        {
+            foreach (Control c in flowLayoutPanel1.Controls)
+            {
+                c.Width = flowLayoutPanel1.Width;
+            }
         }
     }
 }

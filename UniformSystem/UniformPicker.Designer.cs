@@ -38,6 +38,7 @@ namespace UniformSystem
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnPick = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,12 +60,11 @@ namespace UniformSystem
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 36);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(568, 135);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(568, 140);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -72,6 +72,7 @@ namespace UniformSystem
             this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.btnPick, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.comboBox1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
@@ -84,8 +85,18 @@ namespace UniformSystem
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(522, 99);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(522, 120);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(201, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Copyright J Balfour";
             // 
             // btnPick
             // 
@@ -142,7 +153,7 @@ namespace UniformSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
-            this.ClientSize = new System.Drawing.Size(588, 179);
+            this.ClientSize = new System.Drawing.Size(588, 184);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -154,6 +165,7 @@ namespace UniformSystem
             this.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uniform Recorder";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UniformPicker_FormClosed);
             this.Load += new System.EventHandler(this.UniformPicker_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -173,5 +185,6 @@ namespace UniformSystem
         private Label label1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem loginToolStripMenuItem;
+        private Label label2;
     }
 }

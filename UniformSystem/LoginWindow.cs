@@ -27,7 +27,7 @@ namespace UniformSystem
                 if (Directory.Exists(dir))
                 {
                     string[] files = Directory.GetFiles(dir);
-                    string output = "";
+                    string output = "Name,Has tie?,Has full uniform?";
                     foreach (string file in files)
                     {
                         output += File.ReadAllText(file);
@@ -53,6 +53,11 @@ namespace UniformSystem
         private void LoginWindow_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoginWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

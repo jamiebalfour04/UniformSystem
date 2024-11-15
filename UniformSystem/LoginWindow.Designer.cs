@@ -43,6 +43,7 @@ namespace UniformSystem
             this.usernameInput = new System.Windows.Forms.TextBox();
             this.passwordInput = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +69,7 @@ namespace UniformSystem
             this.tableLayoutPanel1.Controls.Add(this.usernameInput, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.passwordInput, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -77,8 +79,8 @@ namespace UniformSystem
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(514, 202);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -126,12 +128,23 @@ namespace UniformSystem
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(214, 143);
+            this.button1.Location = new System.Drawing.Point(214, 139);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 25);
             this.button1.TabIndex = 2;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(197, 178);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 16);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Copyright J Balfour";
             // 
             // LoginWindow
             // 
@@ -149,6 +162,7 @@ namespace UniformSystem
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uniform System :: Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginWindow_FormClosed);
             this.Load += new System.EventHandler(this.LoginWindow_Load);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -166,6 +180,7 @@ namespace UniformSystem
         private TextBox usernameInput;
         private TextBox passwordInput;
         private Button button1;
+        private Label label3;
     }
 }
 

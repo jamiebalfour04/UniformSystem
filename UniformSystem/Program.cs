@@ -17,7 +17,7 @@ namespace UniformSystem
             Application.Run(new UniformPicker());
         }
 
-        public static Dictionary<string, List<string>> registrationClasses = new Dictionary<string, List<string>>();
+        public static Dictionary<string, List<Pupil>> registrationClasses = new Dictionary<string, List<Pupil>>();
         public static string todayDay = DateTime.Now.ToString("dd");
         public static string todayMonth = DateTime.Now.ToString("MM");
         public static string todayYear = DateTime.Now.ToString("yyyy");
