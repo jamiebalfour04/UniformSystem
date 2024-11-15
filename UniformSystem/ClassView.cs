@@ -18,6 +18,7 @@ namespace UniformSystem
         {
             InitializeComponent();
             this.registrationClass = registrationClass;
+            this.registrationLabel.Text = registrationClass;
         }
 
         private void ClassView_Load(object sender, EventArgs e)
