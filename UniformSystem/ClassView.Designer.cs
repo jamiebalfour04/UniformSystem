@@ -98,9 +98,9 @@ namespace UniformSystem
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(61, 61);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(68, 61);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(658, 377);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 377);
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -126,6 +126,7 @@ namespace UniformSystem
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(900, 9999);
+            this.MinimumSize = new System.Drawing.Size(818, 567);
             this.Name = "ClassView";
             this.Padding = new System.Windows.Forms.Padding(10, 8, 10, 8);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
