@@ -36,6 +36,7 @@ namespace UniformSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClassView));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnComplete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -106,6 +107,7 @@ namespace UniformSystem
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(800, 420);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(900, 9999);
