@@ -69,10 +69,10 @@ namespace UniformSystem
             // btnComplete
             // 
             this.btnComplete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnComplete.Location = new System.Drawing.Point(343, 346);
+            this.btnComplete.Location = new System.Drawing.Point(343, 343);
             this.btnComplete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnComplete.Name = "btnComplete";
-            this.btnComplete.Size = new System.Drawing.Size(94, 23);
+            this.btnComplete.Size = new System.Drawing.Size(94, 29);
             this.btnComplete.TabIndex = 1;
             this.btnComplete.Text = "Complete";
             this.btnComplete.UseVisualStyleBackColor = true;
@@ -94,9 +94,9 @@ namespace UniformSystem
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(78, 19);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(61, 19);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(623, 319);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(658, 319);
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.WrapContents = false;
             // 
