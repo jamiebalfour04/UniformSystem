@@ -27,7 +27,7 @@ namespace UniformSystem
                 if (Directory.Exists(dir))
                 {
                     string[] files = Directory.GetFiles(dir);
-                    string output = "Name,Has tie?,Has full uniform?";
+                    string output = "Name,Has tie?,Has full uniform?,Registration\n";
                     foreach (string file in files)
                     {
                         output += File.ReadAllText(file);
