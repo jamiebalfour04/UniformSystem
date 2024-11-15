@@ -56,13 +56,20 @@ namespace UniformSystem
             }
 
             Directory.CreateDirectory("ProgramOutput/" + Program.todayYear + "/" + Program.todayMonth + "/" + Program.todayDay + "/");
+            try
+            {
+                File.WriteAllText("ProgramOutput/" + Program.todayYear + "/" + Program.todayMonth + "/" + Program.todayDay + "/" + registrationClass + ".csv", csvOutput);
+                MessageBox.Show("Data saved.");
 
-            File.WriteAllText("ProgramOutput/" + Program.todayYear + "/" + Program.todayMonth + "/" + Program.todayDay + "/" + registrationClass + ".csv", csvOutput);
+                this.Close();
+                Application.Exit();
+            } catch(IOException ex)
+            {
+                MessageBox.Show("The data could not be saved right now (someone could be accessing it right now). Please try again in a few seconds.", "Try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            MessageBox.Show("Data saved.");
 
-            this.Close();
-            Application.Exit();
+            
         }
 
         private void ClassView_FormClosed(object sender, FormClosedEventArgs e)

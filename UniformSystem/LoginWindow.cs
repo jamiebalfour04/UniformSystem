@@ -40,7 +40,7 @@ namespace UniformSystem
                         Application.Exit();
                     } catch(System.IO.IOException xe)
                     {
-                        MessageBox.Show("The file might be open at the moment. Make sure you close it before trying this again.");
+                        MessageBox.Show("The file might be open at the moment. Make sure you close it before trying this again.", "Try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     
                 }
